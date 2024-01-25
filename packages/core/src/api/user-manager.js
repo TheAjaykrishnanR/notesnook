@@ -348,6 +348,8 @@ class UserManager {
 
   async getAttachmentsKey() {
     try {
+
+      /*
       let user = await this.getUser();
       if (!user) return;
 
@@ -368,13 +370,19 @@ class UserManager {
 
         await this.updateUser(user);
         return key;
-      }
+        */
+        
+        const key = await this._storage.generateRandomKey();
+        return key;
 
+      
+      /*
       const plainData = await this._storage.decrypt(
         userEncryptionKey,
         user.attachmentsKey
       );
-      return JSON.parse(plainData);
+      */
+      // return JSON.parse(plainData);
     } catch (e) {
       console.error(e);
       throw new Error(
