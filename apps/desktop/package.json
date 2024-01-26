@@ -64,9 +64,10 @@
       "!build/banner.jpg",
       "!build/*.ico",
       "!build/*.png",
-      "!node_modules${/*}"
+      "!node_modules${/*}",
+      "node_modules/"
     ],
-    "afterSign": "electron-builder-notarize",
+    
     "afterPack": "./scripts/removeLocales.js",
     "mac": {
       "bundleVersion": "240",

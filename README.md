@@ -8,6 +8,19 @@
 <a href="https://notesnook.com/">Website</a> | <a href="https://notesnook.com/about">About us</a> | <a href="https://notesnook.com/roadmap">Roadmap</a> | <a href="https://notesnook.com/downloads">Downloads</a> | <a href="https://twitter.com/@notesnook">Twitter</a> | <a href="https://discord.gg/5davZnhw3V">Discord</a>
 </p>
 
+## Creating packaged executables for windows : @notesnook/desktop
+
+1. Install NodeJs 16
+2. `cd Notesnook`
+3. `npm install`
+4. make sure that you can run it using `npm run start:desktop`
+5. `cd /Notesnook/apps/desktop`
+6. `npm run release` or `npm run build` and then do `npm run bundle` (you would notice the `build/` directory)
+7. `npm install electron-builder` making sure you are under `../apps/desktop`
+8. again making sure you are in `../apps/desktop` run `electron-builder build`
+9. binaries can be found in `../apps/desktop/output`
+
+
 ## Overview
 
 Notesnook is a free (as in speech) & open-source note-taking app focused on user privacy & ease of use. To ensure zero knowledge principles, Notesnook encrypts everything on your device using `XChaCha20-Poly1305` & `Argon2`.
