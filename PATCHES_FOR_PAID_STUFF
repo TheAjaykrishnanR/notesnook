@@ -1,0 +1,24 @@
+we have a case "upgrade" in notesnook/packages/core/src/api/index.js with the following code:
+
+case "upgrade": {
+            const user = await this.user.getUser();
+            user.subscription = data;
+            await this.user.setUser(user);
+            EV.publish(EVENTS.userSubscriptionUpdated, data);
+            break;
+          }
+
+
+
+here we have to take notice of a few things: user, getUser and setUser methods, and the publish methods of the EV object (is it possibly the subscription state )
+
+theres a fucking function called as isUserPremium in notesnook/packages/core/src/common.js 
+
+
+
+premium checking functions in :
+
+PATCH: notesnook/apps/web/src/hooks/use-is-user-premium.ts -> isUserPremium()
+PATCH: notesnook/packages/core/src/common.js -> checkIsUserPremium()
+apps/web/src/common/constants.ts -> subscription status type defined in
+PATCH: notesnook/packages/core/src/collections/attachment.js -> _getEncryptionKey -> attackment key generator
